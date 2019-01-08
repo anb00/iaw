@@ -18,9 +18,9 @@ import java.util.List;
 @Controller
 public class WebController {
 
-    @RequestMapping(value = "/Secure") //this is Our main after this will show { customer,orders,top templates,top Activities , ...}
+    @RequestMapping(value = "/") //this is Our main after this will show { customer,orders,top templates,top Activities , ...}
     public String index() {
-        return "index_B";
+        return "index_B.html";
     }
 
 
