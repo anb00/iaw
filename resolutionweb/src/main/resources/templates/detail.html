@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Web and JPA CRUD sample</title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+ 	<h1>Star detail</h1>
+
+<ul>
+
+	<li th:text="${star.id}" />
+	<li th:text="${star.name}" />
+	<li th:text="${star.type}" />
+	<li th:text="${star.price}" />
+</ul>
+<a th:href="@{/stars}">Back</a></td>
+</body>
+</html>

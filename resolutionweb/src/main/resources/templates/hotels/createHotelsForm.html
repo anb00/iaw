@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<name>Add Hotels</name>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<style>
+		body {
+			background-color: #000;
+			color:white;
+		}
+	</style>
+</head>
+<body style="background-color:#000; ">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> Add Hotels </h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<a class="btn btn-info" href="#" th:href="@{/hotels/all}"> Back to All Hotels </a>
+			<form action="#" class="form-horizontal"
+				  th:action="@{/hotels/save}"
+				  th:object="${form}"
+				  method="post">
+				<fieldset>
+					<span class="pull-right">
+						    <input type="submit" id="submitButton" class="btn btn-success" th:value="Save">
+						    <input type="reset" id="resetButton" class="btn btn-danger" th:value="Reset"/>
+					</span>
+					<table class="table">
+						<thead>
+						<tr>
+							<th> Name</th>
+							<th> Direccion</th>
+							<th> Price</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr th:each="hotel, itemStat : *{hotels}">
+							<td><input th:placeholder="Title + ' ' + ${itemStat.count}" th:field="*{hotels[__${itemStat.index}__].name}" required/></td>
+							<td><input th:placeholder="Direccion + ' ' + ${itemStat.count}" th:field="*{hotels[__${itemStat.index}__].direccion}" required/></td>
+							<td><input th:placeholder="Price + ' ' + ${itemStat.count}" th:field="*{hotels[__${itemStat.index}__].price}" required/></td>
+						</tr>
+						</tbody>
+					</table>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
